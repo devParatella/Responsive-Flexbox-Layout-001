@@ -1,0 +1,130 @@
+body {
+  background-color: rgba(49, 33, 219, 0.521);
+  font-family: "roboto", sans-serif;
+}
+
+.wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wrap > * {
+  padding: 8px;
+  margin: 8px;
+  flex: 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  height: 110px;
+  background-color: chocolate;
+}
+
+.main {
+  height: 320px;
+  background-color: green;
+}
+
+.side-left {
+  background-color: red;
+}
+
+.side-right {
+  background-color: blue;
+}
+
+.footer {
+  height: 110px;
+  background-color: palevioletred;
+}
+
+/* Estilo padrão para telas pequenas (telefones) */
+@media all and (max-width: 599px) {
+  .wrap > * {
+    flex: 1 100%;
+  }
+}
+
+/* Estilo para telas médias (tablets) */
+@media all and (min-width: 600px) and (max-width: 1023px) {
+  .side {
+    flex: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .side-left {
+    order: 1;
+  }
+  .side-right {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
+}
+
+/* Estilo para telas grandes (laptops e desktops) */
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .wrap {
+    height: 100vh;
+    flex-direction: row;
+  }
+
+  .wrap > * {
+    flex: 1;
+    height: 100%;
+  }
+
+  .header {
+    order: 1;
+  }
+
+  .main {
+    order: 2;
+  }
+
+  .side-left {
+    order: 3;
+  }
+
+  .side-right {
+    order: 4;
+  }
+
+  .footer {
+    order: 5;
+  }
+}
+
+/* Estilo para telas muito grandes (4K e superiores) */
+@media all and (min-width: 1920px) {
+  .wrap {
+    height: 100vh;
+    flex-direction: row;
+  }
+
+  .wrap > * {
+    flex: 1;
+    height: 20%;
+  }
+
+  .header,
+  .footer {
+    flex: 1 100%;
+  }
+  .main {
+    flex: 2 100%;
+    order: 1;
+  }
+  .side-left {
+    order: 2;
+    flex: 1 100%;
+  }
+  .side-right {
+    order: 3;
+    flex: 1 100%;
+  }
+}
